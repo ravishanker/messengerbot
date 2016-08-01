@@ -88,6 +88,7 @@ const actions = {
     cb(context);
   },
   ['login'](sessionId, context, cb) {
+    const recipientId = sessions[sessionId].fbid;
     let message = {
       "attachment": {
         "type": "template",
