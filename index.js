@@ -88,19 +88,20 @@ const actions = {
     cb(context);
   },
   ['login'](sessionId, context, cb) {
-    var message = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "generic",
-        "elements": [{
-          "title": "Welcome to M-Bank",
-          "image_url": "https://commbankbot.herokuapp.com/images/abc_logo.png",
-          "buttons": [{
-            "type": "account_link",
-            "url": "https://tartan.plaid.com/auth"
+    let message = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Welcome to M-Bank",
+            "image_url": "https://commbankbot.herokuapp.com/images/abc_logo.png",
+            "buttons": [{
+              "type": "account_link",
+              "url": "https://tartan.plaid.com/auth"
+            }]
           }]
-        }]
+        }
       }
     };
 
@@ -116,6 +117,7 @@ const actions = {
       // Let's give the wheel back to our bot
       cb();
     });
+
   },
 };
 
