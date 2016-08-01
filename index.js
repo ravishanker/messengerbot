@@ -87,7 +87,7 @@ const actions = {
     context.forecast = 'sunny';
     cb(context);
   },
-  ['login'](sessionId, context, cb) {
+  ['sign-in'](sessionId, context, cb) {
     // const recipientId = sessions[sessionId].fbid;
     let message = {
       "attachment": {
