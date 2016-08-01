@@ -90,16 +90,16 @@ const actions = {
   ['sign-in'](sessionId, context, cb) {
     // const recipientId = sessions[sessionId].fbid;
     let message = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "generic",
-          "elements": [{
-            "title": "Welcome to M-Bank",
-            "image_url": "https://commbankbot.herokuapp.com/images/abc_logo.png",
-            "buttons": [{
-              "type": "account_link",
-              "url": "https://tartan.plaid.com/auth"
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Welcome to M-Bank",
+            image_url: "https://commbankbot.herokuapp.com/images/abc_logo.png",
+            buttons: [{
+              type: "account_link",
+              url: "https://tartan.plaid.com/auth"
             }]
           }]
         }
