@@ -88,7 +88,7 @@ const actions = {
     cb(context);
   },
   ['login'](sessionId, context, cb) {
-    const recipientId = sessions[sessionId].fbid;
+    // const recipientId = sessions[sessionId].fbid;
     let message = {
       "attachment": {
         "type": "template",
@@ -106,18 +106,20 @@ const actions = {
       }
     };
 
-    bot.sendMessage(recipientId, message, (err, data) => {
-      if (err) {
-        console.log(
-          'Oops! An error occurred while forwarding the response to',
-          recipientId,
-          ':',
-          err
-        );
-      }
-      // Let's give the wheel back to our bot
-      cb();
-    });
+    context.login = message;
+    cb(context);
+    // bot.sendMessage(recipientId, message, (err, data) => {
+    //   if (err) {
+    //     console.log(
+    //       'Oops! An error occurred while forwarding the response to',
+    //       recipientId,
+    //       ':',
+    //       err
+    //     );
+    //   }
+    //   // Let's give the wheel back to our bot
+    //   cb();
+    // });
 
   },
 };
